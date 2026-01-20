@@ -47,7 +47,8 @@
             --bg-dark: #0f172a;       
             --bg-darker: #020617;     
             --color-primary: #d4b595; /* Gold/Beige */
-            --color-secondary: #22d3ee; /* Startfarbe Cyan */
+            /* Startfarbe: Logo Blau (Sky-500 ähnlich) */
+            --color-secondary: #0ea5e9; 
             --color-accent: #38bdf8;
             
             --glass-bg: rgba(15, 23, 42, 0.85);
@@ -61,7 +62,7 @@
             --bg-dark: #f8fafc;       
             --bg-darker: #ffffff;     
             --color-primary: #b08d65; 
-            --color-secondary: #0891b2; 
+            --color-secondary: #0284c7; /* Dunkleres Blau für Light Mode */
             
             --glass-bg: rgba(255, 255, 255, 0.9);
             --glass-border: rgba(0, 0, 0, 0.05);
@@ -83,19 +84,23 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Regenbogen Shimmer */
+        /* Logo-Farben Shimmer (Blau -> Orange -> Gelb -> Grün -> Blau) */
         .shimmer-text {
             background: linear-gradient(
                 to right, 
-                #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3, #ff0000
+                #0ea5e9, /* Blau */
+                #f97316, /* Orange */
+                #eab308, /* Gelb */
+                #22c55e, /* Grün */
+                #0ea5e9  /* Blau (Loop) */
             );
             background-size: 200% auto;
             color: #fff;
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: shine 5s linear infinite;
-            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+            animation: shine 6s linear infinite;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.15));
         }
 
         @keyframes shine {
@@ -638,24 +643,24 @@
 
         // --- Color & Theme Logic ---
 
-        // Bright Neon Colors for Dark Mode
+        // Logo-Colors for Dark Mode (Blue, Orange, Yellow, Green, Pink, Violet)
         const neonColors = [
-            '#22d3ee', // Cyan (Neon Blue)
-            '#a3e635', // Lime (Neon Green)
-            '#f472b6', // Pink (Hot Pink)
-            '#c084fc', // Violet (Electric Purple)
-            '#fbbf24', // Amber (Gold/Yellow)
-            '#f87171', // Red (Soft Neon Red)
+            '#0ea5e9', // Blue (Logo)
+            '#f97316', // Orange (Logo)
+            '#eab308', // Yellow (Logo)
+            '#22c55e', // Green (Logo)
+            '#f472b6', // Pink (Bonus)
+            '#c084fc', // Violet (Bonus)
         ];
         
         // Darker Colors for Light Mode (Readability)
         const lightModeColors = [
-            '#0891b2', // Cyan Dark
-            '#4d7c0f', // Lime Dark
-            '#be185d', // Pink Dark
-            '#7e22ce', // Violet Dark
-            '#b45309', // Amber Dark
-            '#b91c1c', // Red Dark
+            '#0284c7', // Blue Dark
+            '#ea580c', // Orange Dark
+            '#ca8a04', // Yellow Dark
+            '#16a34a', // Green Dark
+            '#db2777', // Pink Dark
+            '#9333ea', // Violet Dark
         ];
 
         let colorIndex = 0;
